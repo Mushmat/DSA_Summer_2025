@@ -31,3 +31,4 @@ int main(){
 
 //When you pass a variable by value to a function, a copy of the variable is sent.
 //When you pass by reference, the original value changes.
+//Arrays always go with reference. No need to use &.
