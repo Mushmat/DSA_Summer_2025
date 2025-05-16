@@ -15,5 +15,6 @@ int main()
 
     //If we put the while code into a do-while code, the code will execute for at least one time, irrespective of the condition, because
     //the code checks the 'do' first then it checks 'while'
+    
     return 0;
 }
