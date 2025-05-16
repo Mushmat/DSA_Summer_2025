@@ -1,3 +1,4 @@
+//Basics of input and output, Data types and strings. 
 #include <bits/stdc++.h> //For all libraries. 
 using namespace std; //Uses std for all functions
 
