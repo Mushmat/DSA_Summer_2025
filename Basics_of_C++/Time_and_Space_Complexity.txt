@@ -1,0 +1,19 @@
+-> Analyse the time and space complexity of the code. How faster it runs, and how much space does it take.
+-> Time Complexity != Time Taken by code
+-> TC is the rate at which time taken increases with respect to the input size.
+-> Big-O Notation: O()
+-> it consists of the total number of steps in the execution of any code
+-> Rule 1: Time complexity to be computed in terms of worst case scenario
+-> Rule 2: Avoid Constants
+-> Rule 3: Avoid lower values (asymptotically largest is considered only)
+-> Theta Notation also exists that represents the average complexity. 
+-> Omega Notation represents the lower bound or best case.
+-> Big-O represents the upper bound or worst case complexity.
+-> Nested for loops gets their time complexities multiplied
+-> for(int i = 0; i < n; i++){} takes O(N) time.
+-> whereas, for(int i = 0; i < n; i++){ for(int j = 0; j < n; j++){}} takes O(n^2) time as this is a nested loop and both run for n time.
+-> Space Complexity: Memory space that the program takes.
+-> Again, can be computed in Big-O Notation.
+-> The space that we take to solve the problem + The space taken to store the problem = Space Complexity
+-> eg an array arr[N] has the space complexity O(N).
+-> Most of the online servers eg Leetcode take 1 second for 10^8 operations. 
