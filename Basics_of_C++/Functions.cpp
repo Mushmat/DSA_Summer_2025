@@ -28,3 +28,6 @@ int main(){
     cout << res << endl;
     return 0;
 }
+
+//When you pass a variable by value to a function, a copy of the variable is sent.
+//When you pass by reference, the original value changes.
