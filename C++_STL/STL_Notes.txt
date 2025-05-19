@@ -1,0 +1,141 @@
+1. Pairs (a utility)
+    --> say we want to store couple of integers, then we can simply store them in Pairs
+    --> pair<int, int> p = {1,3};
+    --> Both the data types are integers
+    --> We can have any data type in place of int.
+    --> To access p, say p = {1,3}, we can access using p.first, p.second.
+    --> We can also use nested pairs.
+    --> For example if we need to store {1, {3,4}}, we can make the second data type as pair itself.
+    --> How? pair <int, pair<int, int>> p = {1, {3,4}}; 
+    --> Now we can access 1 as p.first, 3 as p.second.first, and 4 as p.second.second
+    --> We can also declare arrays as pairs
+    --> For example if we want to store {{1,3}, {3,4}, {5,6}};
+    --> Simple, pair <int, int> arr[] = {{1,3}, {3,4}, {5,6}};
+    --> now to access say 4, we can simply write arr[1].second
+    
+2. Vectors (a container)
+    --> The size of array is not mutable
+    --> Whereas vectors are dynamic, hence size mutable
+    --> Declare vector: vector<int> v;
+    --> Any data type can be declared under vector.
+    --> v.push_back(1) //Pushes 1 into the empty container
+    --> v.emplace_back(2) //Increases the size of vector dynamically, and pushes 2 at the back.
+    --> Generally, emplace_back is faster than push_back
+    --> Vectors can be defined to store pairs as well as:
+    --> vector <pair<int, int>> vec;
+    --> v.push_back({1,2});
+    --> If you use emplace_back like v.emplace_back(1,2), it automatically assumes (1,2) as a pair and inserts it
+    --> vector <int> v(5,100); This defines a container of 5 indexes already filled with the value 100 (100,100,100,100,100);
+    --> vector <int> v(5); This defines a container of 5 indexes with garbage values
+    --> vector <int> v2(v1); Copies the container v1 to another container v2
+    --> Iterators are used to access the contents of the vector or generally, any container.
+    --> Initialize an iterator: vector<int>::iterator it = v.begin(); //This creates an iterator for vector, and the iterator points at the beginning of the vector
+    --> v.begin() points to the memory of the first element;
+    --> Then to access, write cout << *(it), this gives you the first element as 'it' is currently at v.begin()
+    --> Do it++, iterator shifts to the next memory
+    --> Other than v.begin(), we also have v.end(), v.rend(), v.rbegin() are other iterators
+    --> v.end() points to the memory location AFTER THE LAST ELEMENT OF THE VECTOR. To fetch the last element, do v.end()--;
+    
+    --> To simply access the elements of the vector using iterator:
+    --> for( auto it = v.begin(); it != v.end(); it++){
+        cout << *(it) << " ";
+    }
+    --> This automatically defines a datatype for the iterator and accesses the items
+    --> More simply, you can:
+    --> for(auto it: v){
+        cout << it << " "
+    }
+    --> This simply automates the it on the vector v.
+    --> To delete things, use v.erase(//iterator to the location)
+    --> v.erase(v.begin() + 1); Deletes the second element from the vector
+    --> v.erase(v.begin() + 2, v.begin() + 4); If the vector is {10,20,30,40,50} then the command deletes 30,40. You pass begin() + 2 to tell the compiler where to start deleting from.
+    --> and you pass v.begin() + 4 to tell the compiler to stop and NOT DELETE v.begin() + 4. So, 50 is not deleted tho 50 is v.begin() + 4. Only, 30 and 40 are deleted.
+    --> Insertions:
+    --> v.insert(v.begin(), 300); inserts 300 at the beginning of the vector
+    --> v.insert(v.begin() + 1, 2, 10); inserts 10, 10 at second and third position. Eg if vector old was {5,5,5}, now it will be {5,10,10,5,5}
+    
+    --> v.size() tells the number of elements in the vector
+    --> v.pop_back() pops out the last element
+    --> v1.swap(v2) swaps two vector
+    --> v.clear() erases everything from the vector
+    --> v.empty() returns true if empty, false if not.
+
+3. List (a container)
+    --> list<int> ls for declaration
+    --> ls.push_back(2) same operation
+    --> ls.emplace_back(3) same operation
+    --> ls.push_front(4) pushes 4 at the beginning
+    --> ls.emplace_front(5) pushes 5 at beginning
+    --> In vectors to push to front, insertion was used. 
+    --> A doubly linked list is maintained for lists whereas for vectors, we only have singly linked list.
+    --> All other functions such as begin, clear, size, empty etc are same as vectors.
+
+4. Deque (similar to vectors and lists) 
+    --> all functions like push_back, emplace_back, push_front, emplace_front, pop_back, pop_front, etc follow
+
+5. Stack (Last In First Out)
+    --> Declare stack<int> st;
+    --> say, st.push(1), st.push(2), st.push(3), st.push(3), st.emplace(5).
+    --> Then, st.top() returns 5, because 5 went in last hence it will come out first.
+    --> Accessing using indexes is not allowed
+    --> st.pop() pops out 5.
+    --> st.size(), st.empty() follow.
+    --> All the operations like pop, push, top are O(1) in stack.
+
+6. Queue (First In First Out)
+    --> Declare queue<int> q;
+    --> q.push(1), q.push(2), q.emplace(4);
+    --> q.back() += 5. This means that 4 will be added with 5 to make it 9
+    --> q.back() prints 9.
+    --> q.front() returns 1 and q.pop() deletes 1.
+    --> Other functions similar to stack
+    --> All the operations are O(1).
+
+7. Priority Queue
+    --> priority_queue<int> pq;
+    --> The maximum element stays at the top.
+    --> For example, even if you push values like this: pq.push(5), pq.push(2), pq.push(10). 
+    --> The pq would look like {10,5,2}
+    --> pq.top() returns 10, and pq.pop() pops out 10.
+    --> Push, top, pop are the main functions here too.
+
+    --> To store the minimum element at the top (MINIMUM HEAP):
+    --> priority_queue<int, vector<int>, greater<int>> pq;
+    --> Now minimum elements would be at the top.
+
+    --> Top is O(1) whereas push and pop are O(log n)
+    
+8. Set
+    --> Everything is in sorted order
+    --> Only stores unique elements
+    --> st.insert(1);
+    --> st.insert(2);
+    --> st.emplace(2);
+    --> st.insert(4);
+    --> st.insert(3);
+    --> The set looks like {1,2,3,4}
+    --> auto it = st.find(3) returns an iterator that points to 3.
+    --> auto it = st.find(6) since 6 is not in the set, it returns st.end(). 
+    --> st.erase(5); takes log n time
+    --> st.erase(it); takes linear time where it is already declared to the element
+
+9. Multiset
+    --> Everything is in sorted order, but it can store multiple occurrences as well. 
+    --> Erasing even one of the multiple elements, erases all the elements
+    --> To delete only one occurrence, ms.erase(ms.find(1));
+    
+10. Unordered_set
+    --> Stores unique elements but no order guaranteed.
+    --> In most of the operations, TC is O(1) but only the lower_bound and upper_bound functions do not work for USet.
+    --> Other operations are similar to set
+    --> In the worst case, O(N) happens.
+    
+11. Map
+    --> Its similar to dictionaries in python
+    --> (Key, Value), key is unique.
+    --> map<int, int> mpp;
+    --> key can be of any data type.
+    --> mpp[1] = 2; For key 1, the value is 2.
+    --> mpp.emplace({3,1});
+    --> mpp.insert({2,4});
+    --> Unique keys stored in sorted order
