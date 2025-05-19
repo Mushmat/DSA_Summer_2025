@@ -1,0 +1,12 @@
+//All patterns are based on loops
+//Patterns help master loops.
+//Patterns are not asked in interviews but play a crucial role in learning.
+//Most of the patterns are made using two loops: The Outer Loop and The Inner Loop
+
+    //The Outer Loop is specifically for the number of lines 
+    //The Inner Loop is specifically for the columns
+    //Rule 1: For outer loop, count the number of rows/lines
+    //Rule 2: For inner loop, focus on the columns and connect them somehow on the rows. 
+    //Rule 3: Whatever you are printing, print them inside the inner for loop.
+    //Rule 4: Observe symmetry (optional; only applicable for certain patterns)
+
