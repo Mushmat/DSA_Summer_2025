@@ -1,0 +1,14 @@
+-> Recursion is when a function calls itself, until a specified condition is met.
+-> Without a specified condition, the Recursion will fall in an infinite condition loop.
+
+-> A stack overflow happens when a code does not have a specified end, hence it runs until it goes out of memory and stop.
+-> Since no end is defined, every function that calls itself, waits until the called function ends, which never does. Hence every function waits in the stack in respective position.
+-> When we keep on calling those functions again and again, all the calls will wait in memory, since none has been completed. And these will remain as is, since there is no end defined.
+-> Causing a stack overflow.
+
+-> The condition that meets the specified end, is called the Base Condition.
+
+-> Every recursion has a recursion tree. The root is the first function that is called. Then it moves on by who-calls-who. And returns when the last function lands on a base condition.
+-> Space Stack can be used to compute space complexity in questions where no data structures are used. This would tell the approximate internal space consumed.
+
+-> In multiple recursion calls, one recursion executes, ends, and then the other ones are executed. Each recursion starts and ends before any other recursion is started.
