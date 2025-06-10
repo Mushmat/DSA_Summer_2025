@@ -34,8 +34,8 @@
         i = low;
         j = high;
         while(i < j){
-            while(arr[i] <= arr[pivot] && i <= high) {i++}
-            while(arr[j] >= arr[pivot] && j >= low) {j--}
+            while(arr[i] <= arr[pivot] && i <= high - 1) {i++}
+            while(arr[j] > arr[pivot] && j >= low + 1) {j--}
             //Above two lines find the first element greater than pivot at i, and lesser than pivot at j; without crossing each other
             if(i<j) swap(arr[i], arr[j]);    
         }
