@@ -2,6 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Defining an array globally fills it with 0, by default
+//Defining an array in int main fills it with garbage values, by default
+
 int main(){
 
     int arr[5]; //Creates an array of size 5, all indexes can store an integer -> i = 0, 1, 2, 3, 4
