@@ -72,7 +72,13 @@ public:
         }
     }
 
-    
+    // union by size
+    // we have a size array of nodes size
+    // and a parent array
+    // initially size array is marked as 1 for all nodes as each node is itself a component
+    // repeat similar process as in union by rank
+    // size increases when number of nodes increases in the component
+
     void unionBySize(int u, int v){
             int ulp_u = findUPar(u);
             int ulp_v = findUPar(v);
@@ -92,9 +98,4 @@ public:
 
 };
 
-// union by size
-// we have a size array of nodes size
-// and a parent array
-// initially size array is marked as 1 for all nodes as each node is itself a component
-// repeat similar process as in union by rank
-// size increases when number of nodes increases in the component
+
