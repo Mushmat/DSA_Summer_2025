@@ -23,7 +23,7 @@ int main() {
 
         long long ans = (dec == 0 && inc == 0)
                         ? 1
-                        : std::max(dec, inc) + 1;
+                        : max(dec, inc) + 1;
 
         cout << ans << '\n';
     }
