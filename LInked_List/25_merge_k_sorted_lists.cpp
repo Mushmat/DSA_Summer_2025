@@ -41,7 +41,8 @@ f(list<node> lists){
 // keep on doing this until PQ exhausts and then dummyNode -> next is the new head yayayyaya
 
 func(list<Node> lists){
-    pq; // define the priority queue
+    // define the priority queue
+    priority_queue<pair<int<Node*>, vector<pair<int,Node*>>, greater<pair<int,Node*>>> pq;
     for(i = 0 to lists.size()){
         pq.add({lists[i].val, lists[i]}); // inserting all heads
     }
